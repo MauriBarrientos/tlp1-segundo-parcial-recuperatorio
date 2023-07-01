@@ -32,6 +32,10 @@ const Reserva = sequelize.define('Reserva', {
         type: DataTypes.BOOLEAN,
         defaultValue: true
     },
+    codigoReserva: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+    },
     createdAt: {
         type: DataTypes.DATE,
         allowNull: false,
@@ -51,7 +55,7 @@ const Reserva = sequelize.define('Reserva', {
     createdAt: true,
     updatedAt: true,
     deletedAt: true,
-    tableName: 'reservadb'
+    tableName: 'reserva'
 });
 
 // Crear tabla si no existe

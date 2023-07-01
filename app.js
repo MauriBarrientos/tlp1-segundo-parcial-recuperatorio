@@ -5,18 +5,23 @@ const path = require('path');
 const morgan = require('morgan');
 const app = express();
 require('dotenv').config();
+const {sequelize} = require('./database');
 require('ejs');
+
+
+//Instancia de conexion con el puerto
+const port = process.env.PORT || 4000;
+
+//Instancia de conexion a la base de datos
+sequelize.authenticate()
+    .then(() => console.log('Conexión a base de datos exitosa'))
+    .catch((error) => console.log('Error al conectar a base de datos', error));
 
 // Middlewares
 app.use(cors());
 app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-
-//Instancia de conexion a la base de datos
-
-//Instancia de conexion con el puerto
-const port = process.env.PORT || 4000;
 
 //Archivos estáticos usando la librería path de NodeJS
 app.use(express.static(path.join(__dirname, 'public')));
