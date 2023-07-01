@@ -1,4 +1,4 @@
-const ctrlReservas = {};
+const ctrlReserva = {};
 const Reserva = require('../models/Reserva');
 
 // Ctrl para obtener todas las reservas
@@ -145,4 +145,4 @@ ctrlReserva.eliminarReserva = async (req, res) => {
     }
 }
 
-module.exports = ctrlReservas;
+module.exports = ctrlReserva;
