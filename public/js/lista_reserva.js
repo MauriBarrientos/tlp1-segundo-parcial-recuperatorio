@@ -1,7 +1,8 @@
 const listadoReservas = document.querySelector('#listadoReservas');
+const reservas = {};
 
 const obtenerReservas = async () => {
-    const res = await fetch('http://localhost:4000/api/reserva', {
+    const res = await fetch('http://localhost:4000/api/reservas', {
         headers: {
             'Authorization': localStorage.getItem('token')
         }
@@ -68,9 +69,10 @@ const mostrarReservas = (reservas) => {
                         <td>${reserva.fechaEntrada}</td>
                         <td>${reserva.fechaSalida}</td>
                         <td>${reserva.numero}</td>
+                        <td>${reserva.codigoReserva}</td>
                         <td>
                             <button onclick=eliminarTarea(event) class="btn btn-danger btn-sm" data-id="${reserva.id}">Eliminar</button>
-                            <a href="/tarea/editar/${reserva.id}" class="btn btn-warning btn-sm">Editar</a>
+                            <a href="/reserva/editar/${reserva.id}" class="btn btn-warning btn-sm">Editar</a>
                         </td>
                     </tr>
                 `;

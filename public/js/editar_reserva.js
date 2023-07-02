@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             throw ({
                 message: 'Error al obtener datos de la reserva'
             })
+            
         }
 
         // Se obtienen los datos de la respuesta (fetch)
@@ -70,7 +71,7 @@ formEditar.addEventListener('submit', async (e) => {
 
     try {
         // Se envia la peticion al servidor
-        const resp = await fetch(`http://localhost:4000/api/reserva/${usuarioId}`, {
+        const resp = await fetch(`http://localhost:4000/api/reserva/${reservaId}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'
@@ -93,7 +94,7 @@ formEditar.addEventListener('submit', async (e) => {
             timer: 1500
         })
         setTimeout(() => {
-            window.location.href = '/reservas';
+            window.location.href = '/';
         }, 1500);
 
     } catch (error) {

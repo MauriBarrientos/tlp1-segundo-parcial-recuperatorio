@@ -1,6 +1,6 @@
 const formNuevaReserva = document.querySelector('#formNuevaReserva');
 
-formNuevaTarea.addEventListener('submit', async (e) => {
+formNuevaReserva.addEventListener('submit', async (e) => {
     e.preventDefault();
 
     
@@ -39,7 +39,7 @@ formNuevaTarea.addEventListener('submit', async (e) => {
         })
 
       setTimeout(() => {
-        window.location.href = '/reservas';
+        window.location.href = '/';
       }, 2000);
     } catch (error) {
         console.log(error);

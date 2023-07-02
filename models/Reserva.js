@@ -1,12 +1,12 @@
 const { sequelize, DataTypes } = require('../database');
 
 const Reserva = sequelize.define('Reserva', {
-    id: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        primaryKey: true,
-        autoincrement: true,
-    },
+    // id: {
+    //     type: DataTypes.INTEGER,
+    //     allowNull: false,
+    //     primaryKey: true,
+    //     autoincrement: true
+    // },
 
     nombre: {
         type: DataTypes.STRING,
@@ -28,13 +28,14 @@ const Reserva = sequelize.define('Reserva', {
         type: DataTypes.INTEGER,
         allowNull: false
     },
+    codigoReserva: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        defaultValue: new Date().getTime(), 
+    },
     estado: {
         type: DataTypes.BOOLEAN,
         defaultValue: true
-    },
-    codigoReserva: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
     },
     createdAt: {
         type: DataTypes.DATE,
@@ -59,6 +60,6 @@ const Reserva = sequelize.define('Reserva', {
 });
 
 // Crear tabla si no existe
-Reserva.sync();
+Reserva.sync({alter: true});
 
 module.exports = Reserva;

@@ -7,7 +7,7 @@ ctrlReserva.obtenerReservas = async (req, res) => {
         const reservas = await Reserva.findAll({
             where: {
                 estado: true,
-                usuarioId: req.usuario.id
+                // reservaId: req.reserva.id
             }
         });
 
@@ -17,9 +17,12 @@ ctrlReserva.obtenerReservas = async (req, res) => {
                 message: 'No hay reservas registradas'
             })
         }
+        console.log(reservas)
 
         return res.json(reservas);
     } catch (error) {
+        console.log('Error de trycatch en obtener reservas')
+        console.log(error)
         return res.status(error.status || 500).json({
             message: error.message || 'Error interno del servidor'
         });
@@ -54,7 +57,7 @@ ctrlReserva.obtenerReserva = async (req, res) => {
 
 //Ctrl para crear una reserva
 ctrlReserva.crearReserva = async (req, res) => {
-    const { titulo, descripcion } = req.body;
+    const { nombre,apellido,fechaEntrada,fechaSalida,numero} = req.body;
 
     try {
         const reserva = await Reserva.create({
@@ -63,7 +66,7 @@ ctrlReserva.crearReserva = async (req, res) => {
             fechaEntrada,
             fechaSalida,
             numero,
-            usuarioId: req.usuario.id
+            // reservaId: req.reserva.id,
         });
 
         if (!reserva) {
