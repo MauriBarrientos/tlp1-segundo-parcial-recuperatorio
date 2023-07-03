@@ -1,12 +1,11 @@
 const { sequelize, DataTypes } = require('../database');
 
 const Reserva = sequelize.define('Reserva', {
-    // id: {
-    //     type: DataTypes.INTEGER,
-    //     allowNull: false,
-    //     primaryKey: true,
-    //     autoincrement: true
-    // },
+    id: {
+        type: DataTypes.INTEGER,
+        primaryKey: true,
+        autoincrement: true
+    },
 
     nombre: {
         type: DataTypes.STRING,

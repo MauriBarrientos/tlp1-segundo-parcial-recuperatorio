@@ -33,6 +33,9 @@ router.get('/reserva/crear', (req, res) => {
 
 // Obtener todas las reservas
 router.get('/api/reservas', obtenerReservas);
+
+//Obtener una reserva
+router.get('/api/reserva/:id', obtenerReserva);
  
 // Crear una reserva
 router.post('/api/reserva', crearReserva);

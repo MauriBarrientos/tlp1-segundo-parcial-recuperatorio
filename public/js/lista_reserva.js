@@ -30,7 +30,7 @@ const eliminarReserva = async (event) => {
 
         Swal.fire({
             icon: 'success',
-            title: 'Tarea eliminada',
+            title: 'Reserva eliminada',
             text: data.message,
         });
         
@@ -71,7 +71,7 @@ const mostrarReservas = (reservas) => {
                         <td>${reserva.numero}</td>
                         <td>${reserva.codigoReserva}</td>
                         <td>
-                            <button onclick=eliminarTarea(event) class="btn btn-danger btn-sm" data-id="${reserva.id}">Eliminar</button>
+                            <button onclick=eliminarReserva(event) class="btn btn-danger btn-sm" data-id="${reserva.id}">Eliminar</button>
                             <a href="/reserva/editar/${reserva.id}" class="btn btn-warning btn-sm">Editar</a>
                         </td>
                     </tr>

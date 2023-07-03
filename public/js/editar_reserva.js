@@ -13,14 +13,13 @@ document.addEventListener('DOMContentLoaded', async () => {
     console.log('DOM cargado');
     
     try {
-        const response = await fetch(`http://127.0.0.1:4000/api/reserva/${reservaId}`);
+        const response = await fetch(`http://localhost:4000/api/reserva/${reservaId}`);
 
         // Si hubo un error al obtener los datos de un usuario
         if (!response.ok) {
             throw ({
                 message: 'Error al obtener datos de la reserva'
             })
-            
         }
 
         // Se obtienen los datos de la respuesta (fetch)
