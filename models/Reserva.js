@@ -16,11 +16,11 @@ const Reserva = sequelize.define('Reserva', {
         allowNull: false,
     },
     fechaEntrada: {
-        type: DataTypes.DATE,
+        type: DataTypes.DATEONLY,
         allowNull: false
     },
     fechaSalida: {
-        type: DataTypes.DATE,
+        type: DataTypes.DATEONLY,
         allowNull: false
     },
     numero: {

@@ -23,7 +23,8 @@ formNuevaReserva.addEventListener('submit', async (e) => {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': localStorage.getItem('token')
+                // 'Authorization': localStorage.getItem('token') JWT modifica el numero de telefono ni puta idea pq
+                
             },
             body: JSON.stringify(nuevaReserva)
         });

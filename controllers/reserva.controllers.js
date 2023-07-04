@@ -58,15 +58,14 @@ ctrlReserva.obtenerReserva = async (req, res) => {
 //Ctrl para crear una reserva
 ctrlReserva.crearReserva = async (req, res) => {
     const { nombre,apellido,fechaEntrada,fechaSalida,numero} = req.body;
-
+    
     try {
         const reserva = await Reserva.create({
             nombre,
             apellido,
             fechaEntrada,
             fechaSalida,
-            numero,
-            // reservaId: req.reserva.id,
+            numero
         });
 
         if (!reserva) {
